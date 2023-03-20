@@ -127,11 +127,15 @@ img {
     height: 100vh;
     padding-top: 80px;
     padding-left: 40px;
+    padding-bottom: 40px;
     z-index: 999;
     background-color: #fff;
 
     transform: translateX(100%);
     transition: transform 250ms ease-in-out;
+
+    display: flex;
+    flex-direction: column;
   }
 
   .menu-container.is-open {
@@ -199,8 +203,7 @@ img {
   }
 
   .mob-contacts {
-    position: absolute;
-    bottom: var(--vertical-gap);
+    margin-top: auto;
   }
 
   .contacts {
@@ -303,7 +306,7 @@ img {
   }
 
   .contacts {
-    padding: 16px 0;
+    padding: 12px 0;
   }
 
   .menu-container .social-items {
@@ -464,6 +467,29 @@ img {
         rgba(46, 47, 66, 0.7)
       ),
       url("../images/hero768@2x.jpg");
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/hero1440.jpg");
+  }
+}
+
+@media (min-width: 1200px) and (min-device-pixel-ratio: 2),
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .hero {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/hero1440@2x.jpg");
   }
 }
 
