@@ -523,7 +523,7 @@ img {
 .hero .title1 {
   color: white;
   text-align: center;
-  width: 320px;
+  max-width: 320px;
   margin: auto;
 }
 
