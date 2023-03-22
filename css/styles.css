@@ -439,7 +439,7 @@ img {
   padding: 112px 0;
 }
 
-@media (min-width: 428px) and (min-device-pixel-ratio: 2),
+@media (min-width: 480px) and (min-device-pixel-ratio: 2),
   (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
@@ -1002,6 +1002,7 @@ img {
   border-radius: 4px;
   border: var(--primary);
   color: #fff;
+  font-weight: 500;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -1026,4 +1027,90 @@ img {
   position: absolute;
   bottom: 8px;
   right: 140px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-column1,
+  .footer-column2 {
+    display: inline-grid;
+  }
+
+  .footer-column1 {
+    margin-right: var(--horizontal-gap);
+  }
+
+  .footer-column2 {
+    margin-top: 0;
+  }
+
+  .footer-column3 {
+    display: block;
+  }
+
+  .footer-column3 input {
+    width: 264px;
+  }
+
+  .footer {
+    padding-left: 108px;
+  }
+
+  .footer .logo {
+    text-align: left;
+  }
+
+  .footer-text {
+    width: 264px;
+  }
+
+  .footer-column2 p,
+  .footer-column3 p {
+    text-align: left;
+  }
+
+  .subscription-form {
+    display: flex;
+  }
+
+  .subscribe-button {
+    display: inline-block;
+    margin: 0;
+    margin-left: var(--horizontal-gap);
+  }
+
+  .subscribe-button::after {
+    left: 405px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-columns {
+    display: flex;
+  }
+
+  .footer {
+    padding: 100px 0;
+  }
+
+  .footer-column1,
+  .footer-column2 {
+    display: block;
+  }
+
+  .footer-column2 {
+    margin-left: var(--large-v-gap);
+  }
+
+  .footer-column3 {
+    margin-top: 0;
+    margin-left: auto;
+  }
+
+  .subscription-form input {
+    border: 1px solid #ffffff;
+  }
+
+  .subscription-form input::placeholder {
+    color: #fff;
+  }
 }
