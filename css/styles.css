@@ -360,8 +360,10 @@ img {
 
 .modal {
   position: absolute;
-  width: 408px;
-  height: 584px;
+  min-width: 310px;
+  max-width: 392px;
+  width: 100%;
+  min-height: 584px;
   background-color: #fff;
   border-radius: 4px;
   left: 50%;
@@ -371,6 +373,7 @@ img {
   padding-top: 72px;
   padding-left: var(--horizontal-gap);
   padding-right: var(--horizontal-gap);
+  padding-bottom: var(--horizontal-gap);
   display: block;
 }
 
@@ -798,6 +801,58 @@ img {
   margin: 8px 0;
 }
 
+.customers-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  margin-top: 72px;
+  flex-wrap: wrap;
+}
+
+.customer {
+  flex-basis: calc(100% / 2 - 16px);
+  margin-bottom: 72px;
+}
+
+.customer-item {
+  border: 1px solid var(--l-slate);
+  border-radius: 4px;
+  padding: 16px 42px;
+  display: block;
+  fill: var(--l-slate);
+  transition: border 250ms var(--timing-cubic), fill 250ms var(--timing-cubic);
+}
+
+.customer-item:hover,
+.customer-item:focus {
+  fill: var(--pressed);
+  border: 1px solid var(--pressed);
+}
+
+.customer-icon {
+  width: 104px;
+  height: 56px;
+  display: block;
+}
+
+@media screen and (max-width: 419px) {
+  .customers-list {
+    display: flex;
+    margin-top: 72px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .customer:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 767px) {
+  .customer:nth-child(n + 5) {
+    margin-bottom: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .team-grid {
     display: flex;
@@ -826,50 +881,6 @@ img {
   }
 }
 
-@media screen and (min-width: 1200px) {
-  .team-member {
-    flex-basis: calc(100% / 4 - var(--horizontal-gap));
-  }
-}
-
-.customers-list {
-  display: flex;
-  list-style: none;
-  justify-content: space-between;
-  margin-top: 72px;
-  flex-wrap: wrap;
-}
-
-.customer {
-  flex-basis: calc(100% / 2 - 16px);
-  margin-bottom: 72px;
-}
-
-.customer:nth-child(n + 5) {
-  margin-bottom: 0;
-}
-
-.customer-item {
-  border: 1px solid var(--l-slate);
-  border-radius: 4px;
-  padding: 16px 42px;
-  display: block;
-  fill: var(--l-slate);
-  transition: border 250ms var(--timing-cubic), fill 250ms var(--timing-cubic);
-}
-
-.customer-item:hover,
-.customer-item:focus {
-  fill: var(--pressed);
-  border: 1px solid var(--pressed);
-}
-
-.customer-icon {
-  width: 104px;
-  height: 56px;
-  display: block;
-}
-
 @media screen and (min-width: 768px) {
   .customer {
     flex-basis: calc(100% / 3 - var(--horizontal-gap));
@@ -889,6 +900,12 @@ img {
   .customer {
     flex-basis: calc(100% / 6 - var(--horizontal-gap));
     margin-bottom: 72px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .team-member {
+    flex-basis: calc(100% / 4 - var(--horizontal-gap));
   }
 }
 
@@ -1008,7 +1025,7 @@ img {
   line-height: 1.5;
   text-align: left;
   transition: background-color 250ms var(--timing-cubic);
-  display: block;
+  display: flex;
   margin: auto;
   margin-top: 16px;
 }
@@ -1024,9 +1041,9 @@ img {
   width: 24px;
   height: 24px;
   display: block;
-  position: absolute;
   bottom: 8px;
   right: 140px;
+  margin-left: 16px;
 }
 
 @media screen and (min-width: 768px) {
@@ -1073,7 +1090,6 @@ img {
   }
 
   .subscribe-button {
-    display: inline-block;
     margin: 0;
     margin-left: var(--horizontal-gap);
   }
@@ -1113,4 +1129,117 @@ img {
   .subscription-form input::placeholder {
     color: #fff;
   }
+}
+
+.form h2 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--hero-bg);
+  margin-bottom: 16px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-label {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: var(--l-slate);
+  padding-bottom: 4px;
+}
+
+.form-field,
+.form-area {
+  border: 1px solid rgba(46, 47, 66, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  padding-left: 38px;
+  color: var(--text);
+  transition: border 250ms var(--timing-cubic);
+}
+
+.form-field {
+  height: 40px;
+}
+
+.form-area::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.form-area {
+  height: 120px;
+  padding: 8px 16px;
+}
+
+.form-field:focus,
+.form-area:focus {
+  border: 1px solid var(--primary);
+  outline: 1px solid var(--primary);
+}
+
+.form-checkbox {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox a {
+  color: var(--primary);
+}
+
+.agree-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+}
+
+.checkbox-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--hero-bg);
+  border-radius: 2px;
+  margin-right: 8px;
+  fill: none;
+  transition: background-color 250ms var(--timing-cubic),
+    border 250ms var(--timing-cubic), fill 250ms var(--timing-cubic);
+}
+
+.agree-checkbox:checked + .checkbox-icon {
+  background: var(--pressed);
+  border: 1px solid var(--pressed);
+  fill: var(--light);
+}
+
+.form-button {
+  margin: var(--horizontal-gap) auto 0;
+}
+
+.form-icon {
+  position: absolute;
+  left: 16px;
+  top: 29px;
+  fill: var(--hero-bg);
+  width: 18px;
+  height: 18px;
+  transition: fill 250ms var(--timing-cubic);
+}
+
+.form-field:focus ~ .form-icon {
+  fill: var(--primary);
 }
