@@ -1370,6 +1370,16 @@ img {
   display: block;
 }
 
+@media screen and (max-width: 389px) {
+  .project-item {
+    width: 100%;}
+
+    .card {
+      overflow: hidden;
+    }
+  }
+}
+
 .card:hover,
 .card:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -1389,6 +1399,10 @@ img {
 }
 
 @media screen and (min-width: 1200px) {
+  .cont-link {
+    font-size: 16px;
+    line-height: 1.5;
+  }
   .project-type {
     cursor: pointer;
   }
