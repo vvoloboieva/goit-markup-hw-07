@@ -45,7 +45,7 @@ ul {
 
 img {
   display: block;
-  width: 100%;
+  /* width: 100%; */
   height: auto;
 }
 
@@ -95,6 +95,12 @@ img {
   height: 70px;
   width: 100%;
   justify-content: space-between;
+}
+
+.header {
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .menu-button {
@@ -265,10 +271,6 @@ img {
     color: var(--pressed);
   }
 
-  .header {
-    border-bottom: 1px solid #e7e9fc;
-  }
-
   .header .container,
   .nav {
     display: flex;
@@ -425,6 +427,10 @@ img {
 
 .cross:hover .close {
   fill: #f4f4fd;
+}
+
+.modal .cross {
+  background-color: var(--accent);
 }
 
 .hero {
@@ -1027,6 +1033,7 @@ img {
   display: flex;
   margin: auto;
   margin-top: 16px;
+  cursor: pointer;
 }
 
 .subscribe-button:hover,
@@ -1197,6 +1204,7 @@ img {
 
 .form-checkbox a {
   color: var(--primary);
+  display: contents;
 }
 
 .agree-checkbox {
@@ -1243,6 +1251,10 @@ img {
   fill: var(--primary);
 }
 
+.section-portfolio {
+  padding-top: var(--vertical-gap);
+}
+
 .projects {
   padding: 0;
   display: flex;
@@ -1250,10 +1262,11 @@ img {
   justify-content: center;
 }
 
+.project-desc {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
-  .project-desc {
-    display: none;
-  }
   .project-item {
     margin-bottom: var(--vertical-gap);
   }
@@ -1269,13 +1282,12 @@ img {
 .projects-nav {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 72px;
+  margin-bottom: var(--vertical-gap);
 }
 
 .project-type {
-  cursor: pointer;
   background-color: var(--light);
-  padding: 12px 24px;
+  padding: 8px 16px;
   border: 1px solid var(--accent);
   border-radius: 4px;
   color: var(--primary);
@@ -1290,13 +1302,55 @@ img {
     background-color 250ms var(--timing-cubic);
 }
 
+.project-type:hover,
+.project-type:focus {
+  background: var(--primary);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  color: #fff;
+  border: 1px solid var(--primary);
+  font-weight: 500;
+  font-style: normal;
+}
+
 .project-tab {
   list-style: none;
   margin-right: 24px;
+  margin-bottom: 16px;
 }
 
 .project-tab:last-child {
   margin-right: 0;
+}
+
+.project-tab:nth-child(n + 4) {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .projects-nav {
+    justify-content: center;
+  }
+
+  .project-type {
+    padding: 12px 24px;
+  }
+
+  .projects {
+    justify-content: space-between;
+  }
+
+  .project-tab {
+    margin-bottom: 0;
+  }
+
+  .project-item {
+    flex-basis: calc(100% / 2 - var(--horizontal-gap));
+  }
+
+  .project-item {
+    margin-bottom: 72px;
+  }
 }
 
 .project-type:hover,
@@ -1311,11 +1365,15 @@ img {
 }
 
 .card {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   transition: box-shadow 250ms var(--timing-cubic);
   text-decoration: none;
   display: block;
+}
+
+.card:hover,
+.card:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .card-title {
@@ -1328,4 +1386,58 @@ img {
 .project-item-type {
   color: var(--text);
   margin-top: 8px;
+}
+
+@media screen and (min-width: 1200px) {
+  .project-type {
+    cursor: pointer;
+  }
+
+  .projects-nav {
+    margin-bottom: 72px;
+  }
+
+  .section-portfolio {
+    padding-top: 100px;
+    padding-bottom: var(--large-v-gap);
+  }
+
+  .projects > .project-item {
+    flex-basis: calc((100% - 2 * var(--horizontal-gap)) / 3);
+    margin-bottom: 48px;
+  }
+
+  .projects > .project-item:nth-child(n + 7) {
+    margin-bottom: 0;
+  }
+
+  .project-desc {
+    display: block;
+    position: absolute;
+    top: 100%;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: var(--light);
+    opacity: 0;
+    transition: 250ms transform var(--timing-cubic);
+  }
+
+  .card:hover .project-desc,
+  .card:focus .project-desc {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  .card-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .card {
+    box-shadow: none;
+  }
 }
