@@ -1372,10 +1372,11 @@ img {
 
 @media screen and (max-width: 389px) {
   .project-item {
-    width: 100%;}
+    width: 100%;
+  }
 
-    .card {
-      overflow: hidden;
+    .card-img img {
+      width: 100%;
     }
   }
 }
