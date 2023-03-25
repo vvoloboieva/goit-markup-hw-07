@@ -125,7 +125,7 @@ img {
   stroke: var(--hero-bg);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.9px) {
   .menu-container {
     position: fixed;
     top: 0;
@@ -546,8 +546,8 @@ img {
   }
 
   .hero-cta {
-     margin: 36px auto 0;
-}
+    margin: 36px auto 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -577,16 +577,16 @@ img {
   margin: 72px auto 0;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width: 768px) {
   .hero-cta {
-     margin: 36px auto 0;
-}
+    margin: 36px auto 0;
+  }
 }
 
-@media screen and (min-width:1200px) {
+@media screen and (min-width: 1200px) {
   .hero-cta {
-     margin: 48px auto 0;
-}
+    margin: 48px auto 0;
+  }
 }
 
 .action-button:hover,
@@ -1391,9 +1391,8 @@ img {
     width: 100%;
   }
 
-    .card-img img {
-      width: 100%;
-    }
+  .card-img img {
+    width: 100%;
   }
 }
 
@@ -1413,6 +1412,35 @@ img {
 .project-item-type {
   color: var(--text);
   margin-top: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .project-desc {
+    display: block;
+    position: absolute;
+    top: 100%;
+    background-color: var(--primary);
+    width: 100%;
+    height: 100%;
+    padding: 40px 32px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    color: var(--light);
+    opacity: 0;
+    transition: 250ms transform var(--timing-cubic);
+  }
+
+  .card:hover .project-desc,
+  .card:focus .project-desc {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  .card-img {
+    position: relative;
+    overflow: hidden;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1442,32 +1470,6 @@ img {
     margin-bottom: 0;
   }
 
-  .project-desc {
-    display: block;
-    position: absolute;
-    top: 100%;
-    background-color: var(--primary);
-    width: 100%;
-    height: 100%;
-    padding: 40px 32px;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.02em;
-    color: var(--light);
-    opacity: 0;
-    transition: 250ms transform var(--timing-cubic);
-  }
-
-  .card:hover .project-desc,
-  .card:focus .project-desc {
-    opacity: 1;
-    transform: translateY(-100%);
-  }
-
-  .card-img {
-    position: relative;
-    overflow: hidden;
-  }
   .card {
     box-shadow: none;
   }
