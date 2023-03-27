@@ -419,18 +419,18 @@ img {
   transition: fill 250ms var(--timing-cubic);
 }
 
-.cross:hover {
-  background-color: var(--pressed);
-  opacity: 1;
-  border: 0;
+.modal .cross {
+  background-color: var(--accent);
 }
 
 .cross:hover .close {
   fill: #f4f4fd;
 }
 
-.modal .cross {
-  background-color: var(--accent);
+.cross:hover {
+  background-color: var(--pressed);
+  opacity: 1;
+  border: 0;
 }
 
 .hero {
